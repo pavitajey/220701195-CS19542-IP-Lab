@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .timetable {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .timetable th, .timetable td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .timetable th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .timetable .time {
+            background-color: #e6f7ff;
+        }
+        .timetable .break, .timetable .lunch {
+            background-color: #dff0d8;
+            font-weight: bold;
+        }
+        .faculty {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto 0;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .faculty th, .faculty td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .faculty th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Class Timetable - Section C</h2>
+
+    <table class="timetable">
+        <tr>
+            <th>Day/Time</th>
+            <th class="time">8:30-9:30</th>
+            <th class="time">9:30-10:30</th>
+            <th class="time">10:30-10:40</th>
+            <th class="time">10:40-11:40</th>
+            <th class="time">11:40-12:40</th>
+            <th class="time">12:40-01:40</th>
+            <th class="time">1:40-2:40</th>
+            <th class="time">2:40-3:30</th>
+        </tr>
+        <tr>
+            <td>TUESDAY</td>
+            <td>VAP</td>
+            <td>VAP</td>
+            <td class="break">BREAK</td>
+            <td>POAI</td>
+            <td>IP</td>
+            <td class="lunch">LUNCH</td>
+            <td>RPA</td>
+            <td>RPA</td>
+        </tr>
+        <tr>
+            <td>WEDNESDAY</td>
+            <td>IP</td>
+            <td>POAI</td>
+            <td class="break">BREAK</td>
+            <td>LIB</td>
+            <td class="lunch">LUNCH</td>
+            <td>COUN</td>
+            <td>NPTL</td>
+            <td>LAB</td>
+        </tr>
+        <tr>
+            <td>THUSDAY</td>
+            <td>CN</td>
+            <td>IP</td>
+            <td class="break">BREAK</td>
+            <td>CN LAB</td>
+            <td>CN LAB</td>
+            <td class="lunch">LUNCH</td>
+            <td>NPTL</td>
+            <td>LIB</td>
+        </tr>
+        <tr>
+            <td>FRIDAY</td>
+            <td>RPA</td>
+            <td>RPA</td>
+            <td class="break">BREAK</td>
+            <td>CN</td>
+            <td>IP</td>
+            <td class="lunch">LUNCH</td>
+            <td>TOC</td>
+            <td>IP LAB</td>
+        </tr>
+        <tr>
+            <td>SATURDAY</td>
+            <td>IP LAB</td>
+            <td>IP LAB</td>
+            <td class="break">BREAK</td>
+            <td>POAI</td>
+            <td>CN</td>
+            <td class="lunch">LUNCH</td>
+            <td>TOC</td>
+            <td>CN LAB</td>
+        </tr>
+    </table>
+
+    <h2>Faculty Details</h2>
+
+    <table class="faculty">
+        <tr>
+            <th>Subject</th>
+            <th>Faculty Code</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>IP</td>
+            <td>IP123</td>
+            <td>MARIA</td>
+        </tr>
+        <tr>
+            <td>CN</td>
+            <td>CN023</td>
+            <td>NITISH</td>
+        </tr>
+        <tr>
+            <td>POAI</td>
+            <td>AI741</td>
+            <td>PAVIT</td>
+        </tr>
+        <tr>
+            <td>VAP</td>
+            <td>AP687</td>
+            <td>NISHAL</td>
+        </tr>
+        <tr>
+            <td>TOC</td>
+            <td>TOC682</td>
+            <td>NANDY</td>
+        </tr>
+    </table>
+
+</body>
+</html>

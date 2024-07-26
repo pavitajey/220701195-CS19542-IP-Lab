@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .timetable {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .timetable th, .timetable td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .timetable th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .timetable .time {
+            background-color: #e6f7ff;
+        }
+        .timetable .break, .timetable .lunch {
+            background-color: #dff0d8;
+            font-weight: bold;
+        }
+        .faculty {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto 0;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .faculty th, .faculty td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .faculty th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Class Timetable - Section C</h2>
+
+    <table class="timetable">
+        <tr>
+            <th>Day/Time</th>
+            <th class="time">8:30-9:30</th>
+            <th class="time">9:30-10:30</th>
+            <th class="time">10:30-10:40</th>
+            <th class="time">10:40-11:40</th>
+            <th class="time">11:40-12:40</th>
+            <th class="time">12:40-01:40</th>
+            <th class="time">1:40-2:40</th>
+            <th class="time">2:40-3:30</th>
+        </tr>
+        <tr>
+            <td>TUESDAY</td>
+            <td>VAP</td>
+            <td>VAP</td>
+            <td class="break">BREAK</td>
+            <td>POAI</td>
+            <td>IP</td>
+            <td class="lunch">LUNCH</td>
+            <td>RPA</td>
+            <td>RPA</td>
+        </tr>
+        <tr>
+            <td>WEDNESDAY</td>
+            <td>IP</td>
+            <td>POAI</td>
+            <td class="break">BREAK</td>
+            <td>LIB</td>
+            <td class="lunch">LUNCH</td>
+            <td>COUN</td>
+            <td>NPTL</td>
+            <td>LAB</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>Science</td>
+            <td>Pt</td>
+            <td class="break">BREAK</td>
+            <td>Maths</td>
+            <td>Social</td>
+            <td class="lunch">LUNCH</td>
+            <td>Tamil</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>English</td>
+            <td>Tamil</td>
+            <td class="break">BREAK</td>
+            <td>Maths</td>
+            <td>Social</td>
+            <td class="lunch">LUNCH</td>
+            <td>Science</td>
+            <td>Lib</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>Maths</td>
+            <td>Tamil</td>
+            <td class="break">BREAK</td>
+            <td>Social</td>
+            <td>Science</td>
+            <td class="lunch">LUNCH</td>
+            <td>English</td>
+            <td>Pt</td>
+        </tr>
+    </table>
+
+    <h2>Faculty Details</h2>
+
+    <table class="faculty">
+        <tr>
+            <th>Subject</th>
+            <th>Faculty Code</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>Maths</td>
+            <td>MA123</td>
+            <td>mari amma</td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td>SC023</td>
+            <td>nitish</td>
+        </tr>
+        <tr>
+            <td>Social</td>
+            <td>SO741</td>
+            <td>pavit</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td>EN687</td>
+            <td>nishal</td>
+        </tr>
+        <tr>
+            <td>Tamil</td>
+            <td>TA682</td>
+            <td>nandy</td>
+        </tr>
+    </table>
+
+</body>
+</html>
