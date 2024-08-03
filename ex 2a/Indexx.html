@@ -1,0 +1,32 @@
+Index.html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Indian flag ig</title>
+    </head>
+    <body>
+        <h1 id="states">
+            Your not viewing any states
+        </h1>
+        <img src="india.jpg" alt="Workplace" usemap="#workmap">
+        <map name="workmap">
+            <area shape="poly" coords="430,792,404,790,391,810,365,807,346,810,354,827,310,842,319,862,324,879,334,882,343,910,326,956,358,945,365,914,389,918,402,886,415,882,418,855,428,823,433,790" alt="Computer" href="tamilnadu.html" title="Tamil Nadu">
+            <area shape="poly" coords="263,805,287,846,304,888,311,925,334,949,335,918,334,923,334,897,322,886,310,838,265,799" alt="Computer" href="kerala.html" title="Kerala">
+            <area shape="poly" coords="263,798,243,735,245,709,282,666,311,655,352,628,346,668,348,698,337,724,335,762,370,798" alt="Computer" href="karnataka.html" title="Karnataka"> 
+        </map>
+        <script>
+            const areas = document.querySelectorAll('area');
+            const statesText = document.getElementById('states');
+
+            areas.forEach(area => {
+                area.addEventListener('mouseover', () => {
+                    statesText.textContent = "Your Currrently viewing " + area.title;
+                });
+
+                area.addEventListener('mouseout', () => {
+                    statesText.textContent = "You're not viewing any states";
+                });
+            });
+        </script>
+    </body>
+</html>
