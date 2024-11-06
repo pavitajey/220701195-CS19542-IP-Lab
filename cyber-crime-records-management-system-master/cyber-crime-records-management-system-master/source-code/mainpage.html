@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Crime Records Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Video background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 100; /* Optional: Make the video slightly transparent */
+        }
+
+        .nav {
+            background: transparent;
+            color: #228B22;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .nav:hover {
+            background-color: #faf6f6;
+        }
+
+        .nav .nav-title {
+            font-size: 28px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .nav-title:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu ul li {
+            color: #228B22;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-menu ul li:hover {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .nav-menu ul li a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .nav-menu ul li a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            bottom: -2px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-menu ul li a:hover::before {
+            width: 100%;
+        }
+
+        /* Login button in navigation bar */
+        /* Login button in navigation bar */
+.login-button-nav {
+    padding: 10px 20px;
+    background-color: #e2e2e2; /* Changed to black */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-button-nav:hover {
+    background-color: #333; /* Dark gray on hover */
+}
+
+/* Extra Login button at bottom */
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000; /* Changed to black */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+}
+
+.login-button:hover {
+    background-color: #333; /* Dark gray on hover */
+}
+
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 20px;
+            }
+
+            .nav-title {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px 0;
+            }
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #f7f3f3;
+            transition: color 0.3s ease-in-out;
+        }
+
+        h3:hover {
+            color: #228B22;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 20px;
+            margin-bottom: 40px;
+        }
+
+        table td {
+            vertical-align: top;
+            padding: 15px;
+        }
+
+        table img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        table img:hover {
+            transform: scale(1.05);
+        }
+
+        td h2 {
+            color: #228B22;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        td p, td ul {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ece8e8;
+        }
+
+        td ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        td ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #f8f4f4;
+            color: #228B22;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .footer:hover {
+            background-color: #f7f5f5;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .accordion {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .accordion-header {
+            background-color: #faf9f9;
+            color: #228B22;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .accordion-header:hover {
+            background-color: #968f8f;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            background-color: white;
+        }
+
+        .accordion-content p {
+            font-size: 16px;
+            color: #968f8f;
+        }
+
+        /* Extra Login button at bottom */
+        .login-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #228B22;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+            text-align: center;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .login-button:hover {
+            background-color: #006400;
+        }
+
+        @media (max-width: 768px) {
+            table td {
+                display: block;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            table img {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop>
+        <source src="your-video-url.mp4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="nav">
+        <div class="nav-title">TAMILNADU CYBER CRIME</div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#one">Home</a></li>
+                <li><a href="#two">Online Awareness</a></li>
+                <li><a href="#three">Important Links</a></li>
+                <li><a href="#four">General Tips</a></li>
+                <li><a href="loginselect.html" class="login-button-nav">Login</a></li> <!-- Added Login button here -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1></h1>
+    </div>
+
+    <section id="two">
+        <h3>Online Awareness</h3>
+        <table>
+            <tr>
+                <td>
+                    <h2>HACKING</h2>
+                    <p>Hacking is the unauthorized access or manipulation of computer systems, networks, and data, often for malicious purposes such as data theft, financial gain, or system disruption. As technology evolves, so do the techniques used by hackers, ranging from phishing and malware to sophisticated attacks like Distributed Denial of Service (DDoS) and ransomware. Cybersecurity, therefore, becomes essential in protecting sensitive information and maintaining system integrity. Key defenses include using strong, unique passwords, multi-factor authentication (MFA), encryption, and constant monitoring for vulnerabilities. Education on online threats, robust security infrastructures, and rapid response protocols are crucial for individuals and organizations to mitigate the risks of hacking and cybercrime in an increasingly digital world.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>CREDIT CARD FRAUD</h2>
+                    <p>**Credit Card Fraud** refers to the unauthorized use of someone’s credit card information to make purchases or withdraw funds. It is one of the most common types of financial crime in the digital age, often resulting from data breaches, phishing attacks, or card skimming. Fraudsters may steal card details through hacking, malware, or even by physical theft of the card itself. The rise of online shopping and digital payments has increased the risk of credit card fraud, prompting businesses and individuals to adopt enhanced security measures such as encryption, tokenization, and multi-factor authentication to protect sensitive data. Prevention and rapid detection are critical to minimizing losses and ensuring financial security.</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="three">
+        <h3>Important Links</h3>
+        <table>
+            <tr>
+                <td>
+                    <h2>GET TO KNOW ABOUT CYBERSECURITY</h2>
+                    <a href="https://www.britannica.com/topic/cybercrime" target="_blank">
+                        <img src="ARCTI.jpeg" alt="Mumbai Police" style="width: 150px; margin-left:200px; height: 150px;">
+                    </a>
+                </td>
+                <td>
+                    <h2>GET DAILY CYBER NEWS</h2>
+                    <a href="https://www.bbc.com/news/topics/c1xp19421ezt" target="_blank">
+                        <img src="bbc.png" alt="Tamil Nadu Police" style="width: 150px; margin-left:150px; height: 150px;">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </section>
+    
+    <section id="four">
+        <h3>General Tips</h3>
+        <div class="accordion">
+            <div class="accordion-header">Password Protection</div>
+            <div class="accordion-content">
+                <p>Use strong, unique passwords for different accounts. Consider using a password manager to store them securely.</p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion-header">Software Updates</div>
+            <div class="accordion-content">
+                <p>Keep your operating system, browser, and other software up to date to protect against vulnerabilities.</p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion-header">Be Wary of Phishing Scams</div>
+            <div class="accordion-content">
+                <p>Be cautious of emails and messages asking for personal information or urging immediate action.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Login button at the bottom -->
+    <a href="loginselect.html" class="login-button">Login</a>
+
+    <script>
+        // Accordion functionality
+        const headers = document.querySelectorAll('.accordion-header');
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
